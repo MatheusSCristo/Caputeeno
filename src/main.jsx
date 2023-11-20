@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import {
+  BrowserRouter,
   createBrowserRouter,
+  HashRouter,
   RouterProvider,
 } from "react-router-dom";
 import Product from "./Pages/Product.jsx"
@@ -14,19 +16,19 @@ import CartProductsProvider from './context/cartproducts.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Caputeeno",
     element: <App />,
     children: [
       {
-        path: "/product/:id",
+        path: "/Caputeeno/product/:id",
         element: <Product />
       },
       {
-        path: "/cart",
+        path: "/Caputeeno/cart",
         element: <Cart />
       },
       {
-        path: "/",
+        path: "/Caputeeno",
         element: <Home />
       },
     ]
@@ -35,11 +37,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-  <React.StrictMode>
-    <CartProductsProvider>
-      <ProductProvider>
-        <RouterProvider router={router} />
-      </ProductProvider>
-    </CartProductsProvider>
-  </React.StrictMode>
+  <BrowserRouter basename={import.meta.env.DEV ? '/' : '/Caputeeno/'}>
+      <CartProductsProvider>
+        <ProductProvider>
+          <RouterProvider router={router} />
+        </ProductProvider>
+      </CartProductsProvider>
+  </BrowserRouter>
 )
