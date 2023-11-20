@@ -19,7 +19,7 @@ const Product = () => {
 
   return (
     <div className='flex flex-col mr-48 ml-48 pt-10 pb-10'>
-      <Link to={"/Caputeeno"}>
+      <Link to={"/"}>
         <div className='flex '>
           <img src='/back.svg' />
           <h1>Voltar</h1>
