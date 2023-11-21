@@ -69,7 +69,7 @@ const Home = () => {
         <div className='grid grid-cols-4 gap-6'>
           {products.length > 0 && products.map((product, key) => (
             <div className='h-[330px] bg-white w-72 ' key={key}>
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/Caputeeno/product/${product.id}`}>
                 <img src={product.image_url} className='w-72 rounded-md' />
                 <h1 className='m-4 mb-1 border-b-2 border-[#DCE2E5] text-textDark'>{product.name}</h1>
                 <h1 className='ml-4 text-[#09090A] font-semibold font-saira' >R${(product.price_in_cents) / 100}</h1>

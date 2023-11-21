@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import Product from './Pages/Product';
@@ -9,18 +9,35 @@ import Home from './Pages/Home';
 import ProductProvider from './context/products';
 import CartProductsProvider from './context/cartproducts';
 
+const router = createBrowserRouter([
+  {
+    path: "/Caputeeno/",
+    element: <App />,
+    children: [
+      {
+        path: "/Caputeeno/",
+        element: <Home />,
+      },
+      {
+        path: "/Caputeeno/product/:id",
+        element: <Product />,
+      },
+      {
+        path: "/Caputeeno/cart",
+        element: <Cart />,
+      },
+
+    ],
+  },
+]);
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <HashRouter>
+  <React.StrictMode>
     <CartProductsProvider>
       <ProductProvider>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route path="/product/:id" element={<Product />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/" element={<Home />} />
-          </Route>
-        </Routes>
+        <RouterProvider router={router}/>
       </ProductProvider>
     </CartProductsProvider>
-  </HashRouter>
+  </React.StrictMode>
 );
