@@ -13,6 +13,7 @@ function CartProductsProvider({ children }) {
     }
     const addCacheProduct = (products) => {
         const updatedCart = [...cart];
+        if(products)
         products.forEach((product) => {
             updatedCart.push(product);
         });
