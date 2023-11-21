@@ -23,9 +23,9 @@ const Navbar = () => {
           value={search} onChange={(e)=>setSearch(e.target.value)}
           >
           </input>
-            <img  className="mr-12 bg-inputGrey p-2 rounded-r-md cursor-pointer" src='search-loupe.svg' onClick={handleOnClickLookingFor} ></img>
+            <img  className="mr-12 bg-inputGrey p-2 rounded-r-md cursor-pointer" src='./search-loupe.svg' onClick={handleOnClickLookingFor} ></img>
         <Link to={"/Caputeeno/cart"} className='relative'>
-          <img src='shopping-bag.svg' />
+          <img src='./shopping-bag.svg' />
           <div
             className='bg-[#DE3838] rounded-[50%] w-3 h-3 absolute bottom-0 right-0 text-[12px] text-white flex items-center justify-center text-center' >
             {cart.length}
