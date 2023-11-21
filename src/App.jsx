@@ -8,7 +8,8 @@ const App = () => {
   const { addCacheProduct,cart } = useContext(CartProductContext)
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart"));
-      addCacheProduct(savedCart)
+    if(savedCart){
+      addCacheProduct(savedCart)}
   }, []); 
   return (
     <LookingProvider>
