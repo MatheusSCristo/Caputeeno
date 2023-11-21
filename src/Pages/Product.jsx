@@ -21,7 +21,7 @@ const Product = () => {
     <div className='flex flex-col mr-48 ml-48 pt-10 pb-10'>
       <Link to={"/Caputeeno/"}>
         <div className='flex '>
-          <img src='./back.svg' />
+          <img src='back.svg' />
           <h1>Voltar</h1>
         </div>
       </Link>
